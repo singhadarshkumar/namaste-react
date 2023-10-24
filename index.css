@@ -1,3 +1,14 @@
 #abc{
     color: blue;
 }
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.searchbar{
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(158, 154, 154);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
