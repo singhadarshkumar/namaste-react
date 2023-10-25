@@ -1,14 +1,108 @@
-#abc{
-    color: blue;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', cursive;
 }
+/* header css */
 .header{
+    padding: 5px;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.header-area.main-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    }
+.nav-items ul{
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 19px;
 }
-.searchbar{
+.nav-items ul li{
     padding: 5px 10px;
-    border-radius: 8px;
-    border: 1px solid rgb(158, 154, 154);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+
+/* body css */
+@media screen and (min-width: 575px){
+    .main-container {
+        max-width: 540px;
+    }
+}
+@media screen and (min-width: 768px){
+    .main-container {
+        max-width: 720px;
+    }
+}
+@media screen and (min-width: 992px){
+    .main-container {
+        max-width: 960px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .main-container {
+        max-width: 1140px;
+    }
+}
+.main-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.restro-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 20px;
+}
+.card-container{
+    -webkit-box-flex: 0;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+}
+
+/* card design css */
+.card-outter{
+    padding: 0px 15px;
+}
+.res-card{
+    /* background-color: white; add in inline css style */
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.res-card:hover{
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.res-card img{
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+}
+/* search-bar css */

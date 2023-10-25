@@ -1,62 +1,93 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
-import logo from '/img/logo.png'; 
-import profile from '/img/profile.png'; 
 
-//react Element 
-// const heading = <h1 id="heading">Hello World</h1>;
-// console.log(heading);
+/**
+ * Header-> logo, nav items
+ * Body-> Search Bar, all the cards
+ * Footer-> links, copyrights, logo, contact, address
+ */
 
-// React Component
-// Class Based Components - old way 
-// Functional component -New way
-
-// Functional component
-// const number = 10000;
-
-// component and element inside component 
-// const HeadingComponent = () =>(
-//     <div className="container">
-//         <Title />
-//         <h4>{number}</h4>
-//         <h1 className="header">React Functional Component</h1>
-//     </div>
-// );
-
-// const Title = () =>(
-//     <div className="container">
-//         <h2 className="title">Title Component</h2>
-//     </div>
-// );
-
-// const root = ReactDOM.createRoot(document.getElementById("abc"));
-// root.render(<HeadingComponent />);
+//Header
+const Header = () =>{
+    return (
+        <div className="header">
+            <div className="main-container header-area">
+                <div className="logo-container">
+                    <img src="https://png.pngtree.com/png-vector/20220727/ourmid/pngtree-burger-logo-vector-design-free-png-clipart-png-image_6081288.png" alt="img-logos" width={100} className="logo"/>
+                </div>
+                <div className="nav-items">
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li>Contact</li>
+                        <li>Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 
-// Assignment task from 3- Q2:
-const Logo = () => (
-    <div>
-        <img src={logo} alt="icon" style={{width: "20px"}}/>
-    </div>
-);
-const SearchBar = () => (
-    <div>
-        <input type="text" className="searchbar" placeholder="Search"/>
-    </div>
-);
-const Usericon = () => (
-    <div>
-        <img src={profile} alt="icon" style={{width: "30px"}}/>
-    </div>
-);
+// for inline css 
+const StyledCard = {
+    backgroundColor: '#ffffff'
+};
+// card
+const RestaurantCard = () =>{
+    return(
+        <div className="res-card" style={StyledCard}>
+            <img src="https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img" className="" />
+            <h3>Kaveri Restaurant</h3>
+            <h4>French</h4>
+            <h5>4.7</h5>
+            <h6>40mins</h6>
+        </div>
+    )
+}
 
-const Header = () => (
-    <div className="header">
-        <Logo />
-        <SearchBar />
-        <Usericon />
-    </div>
-);
 
-const var_root = ReactDOM.createRoot(document.getElementById("abc"));
-var_root.render(<Header />);
+// Body
+const Body=()=>{
+    return(
+        <div className="main-container">
+            <div className="search"> </div>
+            <div className="restro-container">
+                <div className="card-container">
+                   <div className="card-outter">
+                        <RestaurantCard />
+                   </div>
+                </div>
+                <div className="card-container">
+                   <div className="card-outter">
+                        <RestaurantCard />
+                   </div>
+                </div>
+                <div className="card-container">
+                   <div className="card-outter">
+                        <RestaurantCard />
+                   </div>
+                </div>
+                <div className="card-container">
+                   <div className="card-outter">
+                        <RestaurantCard />
+                   </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+const AppLayout = () =>{
+    return (
+        <div className="app">
+            <Header />
+            <Body />
+        </div>
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById("abc"));
+root.render(<AppLayout />);
