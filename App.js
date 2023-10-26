@@ -38,20 +38,28 @@ const RestaurantCard = (props) => {
     const {resData} = props;
     const {image, name, cuisine, avgRating, costForTwo, deliveryTime} = resData?.data;
     return(
-        <div className="card-container">
-            <div className="card-outter">
+        <div className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+            {/* <div className="card-outter"> */}
                 <div className="res-card" style={StyledCard}>
-                    <img src={image} alt="img" className="" />
-                    <h3>{name}</h3>
-                    <h4>{cuisine.join(", ")}</h4>
-                    <h5>{avgRating} Stars</h5>
-                    <h6>₹ {costForTwo / 100}</h6>
-                    <span>{deliveryTime}mins</span>
-                    <button className="cart-btn">
-                        Add To Cart
-                    </button>
+                    <div className="img-area">
+                        <img src={image} alt="img" className="" />
+                    </div>
+                    <div className="card-bottom-content">
+                        <div>
+                            <h3 className="mb-1">{name}</h3>
+                            <h4>{cuisine.join(", ")}</h4>
+                            <div className="d-flex align-items-center justify-content-between">
+                                <h5 className="mb-0">{avgRating} Stars</h5>
+                                <h6 className="mb-0">₹ {costForTwo / 100}</h6>
+                            </div>
+                            <span>{deliveryTime}mins</span>
+                        </div>
+                        <button className="cart-btn">
+                            Add To Cart
+                        </button>
+                    </div>
                 </div>
-            </div>
+            {/* </div> */}
         </div>
     )
 }
@@ -87,6 +95,16 @@ const resList = [
             costForTwo: "50000",
             deliveryTime: "15"
         }
+    },
+    {
+        data: {
+            image: "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            name: "Dosa Samraj",
+            cuisine: ["South-Indian", "Any Time"],
+            avgRating: "4.6",
+            costForTwo: "80000",
+            deliveryTime: "30"
+        }
     }
 ];
 
@@ -95,7 +113,7 @@ const Body=()=>{
     return(
         <div className="main-container">
             <div className="search"></div>
-            <div className="restro-container">
+            <div className="row mt-3">
                 {
                     resList.map(restaurant => (
                         <RestaurantCard resData = {restaurant} />
