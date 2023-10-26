@@ -28,51 +28,79 @@ const Header = () =>{
     )
 }
 
-
 // for inline css 
 const StyledCard = {
     backgroundColor: '#ffffff'
 };
+
 // card
-const RestaurantCard = () =>{
+const RestaurantCard = (props) => {
+    const {resData} = props;
+    const {image, name, cuisine, avgRating, costForTwo, deliveryTime} = resData?.data;
     return(
-        <div className="res-card" style={StyledCard}>
-            <img src="https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img" className="" />
-            <h3>Kaveri Restaurant</h3>
-            <h4>French</h4>
-            <h5>4.7</h5>
-            <h6>40mins</h6>
+        <div className="card-container">
+            <div className="card-outter">
+                <div className="res-card" style={StyledCard}>
+                    <img src={image} alt="img" className="" />
+                    <h3>{name}</h3>
+                    <h4>{cuisine.join(", ")}</h4>
+                    <h5>{avgRating} Stars</h5>
+                    <h6>₹ {costForTwo / 100}</h6>
+                    <span>{deliveryTime}mins</span>
+                    <button className="cart-btn">
+                        Add To Cart
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }
 
+// Json
+const resList = [
+    {
+        data: {
+            image: "https://images.pexels.com/photos/12737919/pexels-photo-12737919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            name: "Paratha Junction",
+            cuisine: ["Breakfast", "Indian", "Snacks"],
+            avgRating: "4.7",
+            costForTwo: "40000",
+            deliveryTime: "35"
+        }
+    },
+    {
+        data: {
+            image: "https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            name: "French Fries",
+            cuisine: ["Breakfast", "French", "Snacks"],
+            avgRating: "4.0",
+            costForTwo: "90000",
+            deliveryTime: "25"
+        }
+    },
+    {
+        data: {
+            image: "https://images.pexels.com/photos/3631/summer-dessert-sweet-ice-cream.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            name: "Desert Store",
+            cuisine: ["Italian", "Snacks"],
+            avgRating: "4.4",
+            costForTwo: "50000",
+            deliveryTime: "15"
+        }
+    }
+];
 
 // Body
 const Body=()=>{
     return(
         <div className="main-container">
-            <div className="search"> </div>
+            <div className="search"></div>
             <div className="restro-container">
-                <div className="card-container">
-                   <div className="card-outter">
-                        <RestaurantCard />
-                   </div>
-                </div>
-                <div className="card-container">
-                   <div className="card-outter">
-                        <RestaurantCard />
-                   </div>
-                </div>
-                <div className="card-container">
-                   <div className="card-outter">
-                        <RestaurantCard />
-                   </div>
-                </div>
-                <div className="card-container">
-                   <div className="card-outter">
-                        <RestaurantCard />
-                   </div>
-                </div>
+                {
+                    resList.map(restaurant => (
+                        <RestaurantCard resData = {restaurant} />
+                    ))
+                }
             </div>
         </div>
     )
