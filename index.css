@@ -91,13 +91,23 @@
 
 .res-card .img-area{
     width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    overflow: hidden;
+    min-height: 200px;
 }
 .res-card img{
     height: 200px;
     width: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;    
 }
+.res-card:hover .img-area img{
+    transform: scale(1.2);
+}
+
 .cart-btn{
     width: 100%;
     border-radius: 10px;
@@ -114,6 +124,7 @@
     color: #084188;
     background-color: #a2c6f1;
     border: 2px solid #09458e;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 .res-card h3{
     font-size: 20px;
