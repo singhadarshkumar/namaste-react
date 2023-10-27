@@ -68,6 +68,7 @@ const RestaurantCard = (props) => {
 const resList = [
     {
         data: {
+            id: "1",
             image: "https://images.pexels.com/photos/12737919/pexels-photo-12737919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Aloo Paratha",
             cuisine: ["Breakfast", "Indian", "Snacks"],
@@ -78,6 +79,7 @@ const resList = [
     },
     {
         data: {
+            id: "2",
             image: "https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "French Fries",
             cuisine: ["Breakfast", "French", "Snacks"],
@@ -88,6 +90,7 @@ const resList = [
     },
     {
         data: {
+            id: "3",
             image: "https://images.pexels.com/photos/3631/summer-dessert-sweet-ice-cream.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Ice Cream",
             cuisine: ["Italian", "Snacks"],
@@ -98,6 +101,7 @@ const resList = [
     },
     {
         data: {
+            id: "4",
             image: "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Masala Dosa",
             cuisine: ["South-Indian", "Any Time"],
@@ -108,6 +112,7 @@ const resList = [
     },
     {
         data: {
+            id: "5",
             image: "https://images.pexels.com/photos/13063303/pexels-photo-13063303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Pani Puri",
             cuisine: ["Indian", "Fast Food"],
@@ -118,6 +123,7 @@ const resList = [
     },
     {
         data: {
+            id: "6",
             image: "https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Steam Momos",
             cuisine: ["Chinese", "Fast Food"],
@@ -128,6 +134,7 @@ const resList = [
     },
     {
         data: {
+            id: "7",
             image: "https://images.pexels.com/photos/3054690/pexels-photo-3054690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Chowmin",
             cuisine: ["Chinese", "Fast Food"],
@@ -138,6 +145,7 @@ const resList = [
     },
     {
         data: {
+            id: "8",
             image: "https://images.pexels.com/photos/3727196/pexels-photo-3727196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Fried Rice",
             cuisine: ["India", "Lunch", "Dinner"],
@@ -148,6 +156,7 @@ const resList = [
     },
     {
         data: {
+            id: "9",
             image: "https://images.pexels.com/photos/4475024/pexels-photo-4475024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Lassi",
             cuisine: ["India", "Any Time", "Desert"],
@@ -158,6 +167,7 @@ const resList = [
     },
     {
         data: {
+            id: "10",
             image: "https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Lassi",
             cuisine: ["India", "Any Time", "Desert"],
@@ -168,6 +178,7 @@ const resList = [
     },
     {
         data: {
+            id: "11",
             image: "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Pancake",
             cuisine: ["German", "Breakfast", "Desert"],
@@ -178,6 +189,7 @@ const resList = [
     },
     {
         data: {
+            id: "12",
             image: "https://images.pexels.com/photos/958547/pexels-photo-958547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Thali",
             cuisine: ["Indian", "Lunch", "Dinner", "Non-veg Added"],
@@ -195,8 +207,8 @@ const Body=()=>{
             <div className="search"></div>
             <div className="row mt-3">
                 {
-                    resList.map(restaurant => (
-                        <RestaurantCard resData = {restaurant} />
+                    resList.map(restaurant => ( 
+                        <RestaurantCard key={restaurant.data.id} resData = {restaurant} />
                     ))
                 }
             </div>
