@@ -17,7 +17,7 @@ const resList = [
             image: "https://images.pexels.com/photos/2498440/pexels-photo-2498440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "French Fries",
             cuisine: ["Breakfast", "French", "Snacks"],
-            avgRating: "4.0",
+            avgRating: "3.9",
             costForTwo: "90000",
             deliveryTime: "25"
         }
@@ -28,7 +28,7 @@ const resList = [
             image: "https://images.pexels.com/photos/3631/summer-dessert-sweet-ice-cream.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Ice Cream",
             cuisine: ["Italian", "Snacks"],
-            avgRating: "4.4",
+            avgRating: "3.1",
             costForTwo: "50000",
             deliveryTime: "15"
         }
@@ -103,9 +103,9 @@ const resList = [
         data: {
             id: "10",
             image: "https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            name: "Lassi",
+            name: "Coke",
             cuisine: ["India", "Any Time", "Desert"],
-            avgRating: "4.5",
+            avgRating: "3.9",
             costForTwo: "1000",
             deliveryTime: "5"
         }
@@ -116,7 +116,7 @@ const resList = [
             image: "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name: "Pancake",
             cuisine: ["German", "Breakfast", "Desert"],
-            avgRating: "4.2",
+            avgRating: "3.3",
             costForTwo: "25000",
             deliveryTime: "45"
         }
